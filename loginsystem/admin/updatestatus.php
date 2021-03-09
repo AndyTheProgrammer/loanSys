@@ -9,7 +9,8 @@ if (strlen($_SESSION['id']==0)) {
 // for approving customers Loan    
 if(isset($_POST['Submit']))
 {
-	$status=$_POST['status'];
+  $_SESSION['msg']="Loan status still Pending";
+  	$status=$_POST['status'];
 
   $uid=intval($_GET['uid']);
 $query=mysqli_query($con,"update loan set status='$status' where id='$uid'");
@@ -98,9 +99,14 @@ $_SESSION['msg']="loan Status has been Updated!";
           </div>
       </aside>
       <?php $ret=mysqli_query($con,"select * from loan where id='".$_GET['uid']."'");
+           // $_SESSION['msg']="Loan status still Pending";
+
 	  while($row=mysqli_fetch_array($ret))
-	  
+
+
 	  {?>
+
+
       <section id="main-content">
           <section class="wrapper">
           	<h3><i class="fa fa-angle-right"></i> <?php echo $row['fname'];?>'s Information</h3>

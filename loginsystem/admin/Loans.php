@@ -132,6 +132,10 @@ $msg="Leave updated Successfully";
 
                                   <th>Loan Amount</th>
                                   <th>Loan Purpose</th>
+                                  <th>Loan status</th>
+                                  <th>Approve/Reject</th>
+
+
                               </tr>
                               </thead>
                               <tbody>
